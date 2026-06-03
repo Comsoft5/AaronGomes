@@ -269,7 +269,7 @@
     <a href="mailto:aaron@aarongomes.com" class="btn-cta">Say hello</a>
 
     <div class="contact-links-row" style="margin-top: 44px;">
-      <a href="mailto:aarongomes2003@gmail.com" class="contact-link">Email</a>
+      <button class="contact-link email-modal-trigger" onclick="document.getElementById('email-modal').classList.add('open')">Email</button>
       <a href="https://www.linkedin.com/in/aarongomes36/" class="contact-link" target="_blank">LinkedIn</a>
       <a href="AaronG-Prodexec-2.pdf" class="contact-link" target="_blank">Resume</a>
     </div>
@@ -286,6 +286,28 @@
   <span>© 2026 Aaron Gomes. All rights reserved.</span>
   <span>Dubai, UAE</span>
 </footer>
+
+<!-- EMAIL MODAL -->
+<div id="email-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-box">
+    <button class="modal-close" onclick="document.getElementById('email-modal').classList.remove('open')" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <p class="modal-label" id="modal-title">Email</p>
+    <a href="mailto:aarongomes2003@gmail.com" class="modal-email">aarongomes2003@gmail.com</a>
+    <p class="modal-hint">Click the address to open your mail app, or copy it below.</p>
+    <button class="modal-copy-btn" id="copy-btn" onclick="
+      navigator.clipboard.writeText('aarongomes2003@gmail.com').then(() => {
+        const btn = document.getElementById('copy-btn');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy address', 2000);
+      });
+    ">Copy address</button>
+  </div>
+</div>
 
 <!-- SCROLL TO TOP -->
 <button id="scroll-top" aria-label="Scroll to top">

@@ -19,3 +19,14 @@ window.addEventListener('scroll', () => {
 scrollBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// Email modal — close on Escape or overlay click
+const emailModal = document.getElementById('email-modal');
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') emailModal.classList.remove('open');
+});
+
+emailModal.addEventListener('click', (e) => {
+  if (e.target === emailModal) emailModal.classList.remove('open');
+});
