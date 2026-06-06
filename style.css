@@ -827,20 +827,80 @@ footer {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 860px) {
-  #site-nav { padding: 16px 24px; justify-content: flex-end; }
-  .nav-links { gap: 20px; }
-  #intro { padding: 72px 24px; }
-  .intro-stats { gap: 28px; flex-wrap: wrap; }
-  #experience { padding: 72px 24px; }
-  .exp-item { grid-template-columns: 1fr; gap: 16px; }
+
+  /* NAV */
+  #site-nav {
+    padding: 14px 20px;
+    justify-content: space-between;
+  }
+  #site-nav.scrolled { padding: 12px 20px; }
+  .nav-home {
+    position: static;
+    font-size: 1rem;
+  }
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 0.68rem; letter-spacing: 0.1em; }
+
+  /* HERO */
+  .hero-name { font-size: clamp(3rem, 16vw, 5rem); }
+
+  /* INTRO */
+  #intro { padding: 60px 24px; }
+  .intro-stats { gap: 24px; flex-wrap: wrap; justify-content: center; }
+  .intro-stats > div { min-width: 80px; text-align: center; }
+
+  /* EXPERIENCE */
+  #experience { padding: 60px 24px; }
+  .exp-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 32px 0;
+  }
+  .exp-item:last-child { border-bottom: none; }
+  .exp-meta { padding-bottom: 4px; }
+
+  /* WORK */
   #work .section-intro { padding: 0 24px; }
-  .work-item { grid-template-columns: 1fr; }
+  .work-item {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
   .work-item.reverse { direction: ltr; }
-  .work-visual { min-height: 240px; }
-  .work-content { padding: 40px 28px; }
-  #philosophy { padding: 72px 24px; }
+  .work-visual { min-height: 200px; }
+  .work-visual-num { font-size: 5rem; }
+  .work-content { padding: 32px 24px; }
+  .work-desc { font-size: 1rem; max-width: 100%; }
+
+  /* PHILOSOPHY */
+  #philosophy { padding: 60px 24px; }
   .principles { grid-template-columns: 1fr; }
-  .principle { border-right: none; }
-  #contact { padding: 80px 24px; }
-  footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+  .principle { border-right: none; padding: 32px 0; }
+
+  /* CONTACT */
+  #contact { padding: 60px 24px; }
+  .contact-links-row { gap: 20px; }
+  .modal-box { padding: 40px 28px; }
+  .modal-email { font-size: 1rem; }
+
+  /* FOOTER */
+  footer {
+    padding: 20px 24px;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+
+  /* SCROLL TOP */
+  #scroll-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
+}
+
+/* Very small screens */
+@media (max-width: 400px) {
+  .nav-links { gap: 10px; }
+  .nav-links a { font-size: 0.6rem; }
+  .hero-name { font-size: 3rem; }
+  .work-content { padding: 24px 16px; }
+  #experience { padding: 48px 16px; }
+  #philosophy { padding: 48px 16px; }
+  #contact { padding: 48px 16px; }
 }
