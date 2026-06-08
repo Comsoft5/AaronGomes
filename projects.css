@@ -15,7 +15,7 @@
 }
 
 .projects-back {
-  position: absolute;
+  position: fixed;
   top: 28px;
   left: 48px;
   font-family: var(--sans);
